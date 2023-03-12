@@ -21,10 +21,19 @@
                <!-- Example single danger button -->
 <div class="btn-group">
   <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Account
+   {{#if user}}
+   {{user.name}}
+   {{else}}
+    Guest
+    {{/if}}
   </button>
   <div class="dropdown-menu">
+       {{#if user}}
+   <a class="dropdown-item" href="/logout">Logout</a>
+   {{else}}
     <a class="dropdown-item" href="/login">Login</a>
+    {{/if}}
+    
   </div>
 </div> 
             </div>
